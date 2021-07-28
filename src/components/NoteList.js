@@ -5,13 +5,22 @@ const NoteList = () => {
     const notes = useSelector(state => state.notes)
     console.log(notes, 'notes')
 
+
+    const renderNotes = () => {
+        return notes.map(note =>
+            <div key={note}>
+                {note}
+            </div>
+        )
+    }
+
     if (!notes) {
         return null
     }
 
     return (
         <div>
-            list
+            {renderNotes()}
         </div>
     )
 }
