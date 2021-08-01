@@ -13,7 +13,9 @@ const AddNote = () => {
     const dispatch = useDispatch()
 
     const onFormSubmit = (event) => {
-        event.preventDefault()
+        if (event) {
+            event.preventDefault()
+        }
 
         console.log(input, 'input')
 
@@ -24,6 +26,13 @@ const AddNote = () => {
     return (
         <form onSubmit={onFormSubmit}>
             <TextField
+                onKeyPress={(ev) => {
+                    console.log(`Pressed keyCode ${ev.key}`);
+                    if (ev.key === 'Enter') {
+                        onFormSubmit()
+                        ev.preventDefault()
+                    }
+                }}
                 onChange={(e) => setInput(e.target.value)}
                 value={input}
                 fullWidth
@@ -34,7 +43,8 @@ const AddNote = () => {
                 variant="outlined"
                 autoFocus
             />
-            <Button type="submit" fullWidth>submit</Button>
+            <Button type="submit" variant="contained"
+                color="primary" fullWidth>submit</Button>
         </form>
     )
 }
