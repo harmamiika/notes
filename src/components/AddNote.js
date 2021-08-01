@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
+import { FormControl } from '@material-ui/core';
+import { Input } from '@material-ui/core';
 
 import { addNote } from '../actions/index'
 
@@ -13,15 +15,14 @@ const AddNote = () => {
     const onFormSubmit = (event) => {
         event.preventDefault()
 
+        console.log(input, 'input')
+
         dispatch(addNote(input))
         setInput('')
     }
 
     return (
         <form onSubmit={onFormSubmit}>
-            <input onChange={(e) => setInput(e.target.value)}
-                value={input}>
-            </input>
             <TextField
                 onChange={(e) => setInput(e.target.value)}
                 value={input}
@@ -31,8 +32,9 @@ const AddNote = () => {
                 multiline
                 rows={7}
                 variant="outlined"
+                autoFocus
             />
-            <button>submit</button>
+            <Button type="submit" fullWidth>submit</Button>
         </form>
     )
 }
