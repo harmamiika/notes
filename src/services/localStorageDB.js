@@ -26,6 +26,14 @@ const DBaddNote = (DBnote) => {
     return newArray
 }
 
+const DBdeleteNote = (id) => {
+    const notes = getNotes()
+    console.log(notes, 'got notes')
+    const newNotes = notes.filter(note => note.id !== id)
+    console.log(newNotes, 'newnotes')
+    window.localStorage.setItem('notes', JSON.stringify(newNotes))
+}
+
 const getNotes = () => {
     const jsonNotes = window.localStorage.getItem('notes')
     console.log(jsonNotes, 'jsonNtes')
@@ -53,5 +61,6 @@ const makeId = () => {
 
 export default {
     addNote,
-    getNotes
+    getNotes,
+    DBdeleteNote
 }

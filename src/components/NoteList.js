@@ -16,11 +16,13 @@ const NoteList = () => {
         dispatch(getNotes())
     }, [])
 
+    //move this to app
+
 
 
     const renderNotes = () => {
         return <List>{notes.map(note =>
-            <Note key='note' note={note} />
+            <Note key={note.id} note={note} />
         )}
         </List>
     }
