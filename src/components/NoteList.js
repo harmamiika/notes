@@ -1,13 +1,21 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { List } from '@material-ui/core'
 
+import { getNotes } from '../actions'
 import Note from './Note'
 
 const NoteList = () => {
+    const dispatch = useDispatch()
+
     const notes = useSelector(state => state.notes)
     console.log(notes, 'notes')
+
+    useEffect(() => {
+        dispatch(getNotes())
+    }, [])
+
 
 
     const renderNotes = () => {

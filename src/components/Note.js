@@ -20,7 +20,7 @@ const Note = ({ note }) => {
     return (
         <div>
             <ListItem>
-                <ListItemText primary={note} />
+                <ListItemText primary={note.content} />
                 <Button color='primary' onClick={onDoneClick}><DoneIcon /></Button>
                 <Button color='secondary' onClick={onDeleteClick}><ClearIcon /></Button>
             </ListItem>

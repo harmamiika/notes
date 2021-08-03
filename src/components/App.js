@@ -17,4 +17,12 @@ const App = () => {
     )
 }
 
+// all notes
+// next notes
+
 export default App
+
+// data struckture ei useria koska localstorage db 
+
+// set and get notes
+// notes key=id(generated) { noteContent() createonDate() completed() }
