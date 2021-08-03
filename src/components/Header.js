@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,7 +17,11 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         flexGrow: 1,
+        color: 'white'
     },
+    centeredButtons: {
+        justifyContent: 'center'
+    }
 }));
 
 
@@ -29,18 +34,26 @@ const Header = () => {
                 <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                     <MenuIcon />
                 </IconButton>
+
                 <Typography variant="h5" className={classes.title}>
                     Notes App by Miika
                 </Typography>
-                <Typography variant="h6" className={classes.title}>
-                    Create Notes
-                </Typography>
-                <Typography variant="h6" className={classes.title}>
-                    NoteArchive - completed notes
-                </Typography>
-                <Typography variant="h6" className={classes.title}>
-                    Info
-                </Typography>
+                <Button>
+                    <Typography variant="h6" className={classes.title}>
+                        Create Notes
+                    </Typography>
+                </Button>
+                <Button>
+                    <Typography variant="h6" className={classes.title}>
+                        Completed notes
+                    </Typography>
+                </Button>
+                <Button>
+                    <Typography variant="h6" className={classes.title}>
+                        Info
+                    </Typography>
+                </Button>
+
             </Toolbar>
         </AppBar>
     )

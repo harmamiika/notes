@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+
 import Container from '@material-ui/core/Container'
 
 import Header from './Header'
 import AddNote from './AddNote'
 import NoteList from './NoteList'
 
+import { getNotes } from '../actions'
+
 const App = () => {
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getNotes())
+    }, [])
+
     return (
         <div>
             <Header />

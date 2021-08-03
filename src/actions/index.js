@@ -1,7 +1,7 @@
 import dbService from '../services/localStorageDB'
 
-export const addNote = (note) => async dispatch => {
-    const noteDB = dbService.addNote(note)
+export const addNote = (note, deadline) => async dispatch => {
+    const noteDB = dbService.addNote(note, deadline)
 
     dispatch({
         type: 'ADD_NOTE',
