@@ -2,7 +2,7 @@ const DBcreateNote = (inputContent) => {
     const DBNote = {
         id: makeId(),
         content: inputContent,
-        createDate: new Date(),
+        createDate: new Date().toLocaleString('en-US'),
         targetDate: null,
         completed: false
     }

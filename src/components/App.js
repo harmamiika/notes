@@ -9,7 +9,7 @@ const App = () => {
     return (
         <div>
             <Header />
-            <Container style={{ backgroundColor: "white" }}>
+            <Container>
                 <AddNote />
                 <NoteList />
             </Container>
