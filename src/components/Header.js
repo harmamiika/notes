@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom';
+
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -44,22 +46,30 @@ const Header = () => {
                     <Typography variant="h5" className={classes.title}>
                         Notes App by Miika
                     </Typography>
-                    <Button>
-                        <Typography variant="h6" className={classes.title}>
-                            Create Notes
-                        </Typography>
-                    </Button>
-                    <Button>
-                        <Typography variant="h6" className={classes.title}>
-                            Completed notes
-                        </Typography>
-                    </Button>
-                    <Button>
-                        <Typography variant="h6" className={classes.title}>
-                            Info
-                        </Typography>
-                    </Button>
 
+                    <Link to='/'>
+                        <Button>
+                            <Typography variant="h6" className={classes.title}>
+                                Create Notes
+                            </Typography>
+                        </Button>
+                    </Link>
+
+                    <Link to='/archive'>
+                        <Button>
+                            <Typography variant="h6" className={classes.title}>
+                                Completed notes
+                            </Typography>
+                        </Button>
+                    </Link>
+
+                    <Link to='/info'>
+                        <Button>
+                            <Typography variant="h6" className={classes.title}>
+                                Info
+                            </Typography>
+                        </Button>
+                    </Link>
                 </Toolbar>
             </AppBar>
             <AppBar position="static">

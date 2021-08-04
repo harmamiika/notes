@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { Switch, Route } from 'react-router-dom'
 
 import Container from '@material-ui/core/Container'
 
 import Header from './Header'
 import AddNote from './AddNote'
 import NoteList from './NoteList'
+import Info from './Info'
+import ViewNotes from './ViewNotes'
 
 import { getNotes } from '../actions'
+
 
 const App = () => {
     const dispatch = useDispatch()
@@ -19,9 +23,24 @@ const App = () => {
     return (
         <div>
             <Header />
+
             <Container>
-                <AddNote />
-                <NoteList />
+                <Switch>
+
+                    <Route path='/info'>
+                        <Info />
+                    </Route>
+
+                    <Route path='/archive'>
+                        <ViewNotes />
+                    </Route>
+
+                    <Route path='/'>
+                        <AddNote />
+                        <NoteList />
+                    </Route>
+
+                </Switch>
             </Container>
         </div>
     )
