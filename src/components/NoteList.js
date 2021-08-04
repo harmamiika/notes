@@ -5,7 +5,7 @@ import { List } from '@material-ui/core'
 
 import Note from './Note'
 
-const NoteList = () => {
+const NoteList = ({ completed }) => {
     const notes = useSelector(state => state.notes)
     console.log(notes, 'notes')
 
@@ -15,8 +15,9 @@ const NoteList = () => {
 
 
     const renderNotes = () => {
-        return <List>{notes.map(note =>
+        return <List>{notes.map(note => completed === note.completed ?
             <Note key={note.id} note={note} />
+            : null
         )}
         </List>
     }

@@ -32,7 +32,7 @@ const Note = ({ note }) => {
         <div>
             <ListItem>
                 <ListItemText primary={note.content} />
-                <ListItemText className={classes.date} secondary={`Created: ${note.createDate}`} />
+                <ListItemText className={classes.date} secondary={`Created: ${note.createDate} ${note.completed ? ` - Completed: ${note.completeDate}` : ''}`} />
                 <Button color='primary' onClick={onDoneClick}><DoneIcon className={classes.doneIcon} /></Button>
                 <Button color='secondary' onClick={onDeleteClick}><ClearIcon /></Button>
             </ListItem>

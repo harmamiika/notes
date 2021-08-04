@@ -33,11 +33,12 @@ const App = () => {
 
                     <Route path='/view'>
                         <ViewNotes />
+                        <NoteList completed={true} />
                     </Route>
 
                     <Route path='/'>
                         <AddNote />
-                        <NoteList />
+                        <NoteList completed={false} />
                     </Route>
 
                 </Switch>
