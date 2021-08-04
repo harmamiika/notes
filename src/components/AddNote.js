@@ -20,7 +20,7 @@ const AddNote = () => {
 
         console.log(input, 'input')
 
-        dispatch(addNote(input, deadline = null))
+        dispatch(addNote(input))
         setInput('')
     }
 
@@ -51,7 +51,7 @@ const AddNote = () => {
                 variant="outlined"
             />
             <Button type="submit" variant="contained"
-                color="primary" fullWidth>submit</Button>
+                color="primary" fullWidth>Add new note!     </Button>
         </form>
     )
 }

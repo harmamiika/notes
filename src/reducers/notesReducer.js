@@ -9,6 +9,8 @@ export const notesReducer = (state = [], action) => {
             return state.concat(action.payload)
         case 'DELETE_NOTE':
             return state.filter(note => note.id !== action.payload)
+        case 'COMPLETE_NOTE':
+            return action.payload
         default:
             return state
     }

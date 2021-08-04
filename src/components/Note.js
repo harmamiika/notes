@@ -6,7 +6,7 @@ import ClearIcon from '@material-ui/icons/Clear'
 import DoneIcon from '@material-ui/icons/Done';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { deleteNote } from '../actions';
+import { completeNote, deleteNote } from '../actions';
 
 const useStyles = makeStyles({
     date: {
@@ -20,7 +20,7 @@ const Note = ({ note }) => {
     const classes = useStyles()
 
     const onDoneClick = () => {
-        console.log('yoo')
+        dispatch(completeNote(note.id))
     }
 
     const onDeleteClick = () => {

@@ -20,6 +20,14 @@ const addNote = (inputContent, deadline) => {
     return DBFormatNote
 }
 
+const DBcompleteNote = (id) => {
+    const notes = getNotes()
+    const newNotes = notes.map(note => note.id === id ? { ...note, completed: true, completeDate: new Date().toLocaleString('en-US') } : note)
+    console.log(newNotes, 'new notes')
+    window.localStorage.setItem('notes', JSON.stringify(newNotes))
+    return newNotes
+}
+
 const DBdeleteNote = (id) => {
     const notes = getNotes()
     console.log(notes, 'got notes')
@@ -64,5 +72,6 @@ const makeId = () => {
 export default {
     addNote,
     getNotes,
-    DBdeleteNote
+    DBdeleteNote,
+    DBcompleteNote
 }

@@ -1,6 +1,6 @@
 import dbService from '../services/localStorageDB'
 
-export const addNote = (note, deadline) => async dispatch => {
+export const addNote = (note, deadline = null) => async dispatch => {
     const noteDB = dbService.addNote(note, deadline)
 
     dispatch({
@@ -31,9 +31,11 @@ export const deleteNote = (id) => async dispatch => {
 }
 
 export const completeNote = (id) => async dispatch => {
+    const notes = dbService.DBcompleteNote(id)
+
     dispatch({
         type: 'COMPLETE_NOTE',
-        payload: id
+        payload: notes
     })
 }
 
