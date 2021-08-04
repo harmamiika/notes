@@ -31,7 +31,7 @@ const App = () => {
                         <Info />
                     </Route>
 
-                    <Route path='/archive'>
+                    <Route path='/view'>
                         <ViewNotes />
                     </Route>
 

@@ -44,21 +44,21 @@ const Header = () => {
                     </IconButton>
 
                     <Typography variant="h5" className={classes.title}>
-                        Notes App by Miika
+                        Todo App by Miika
                     </Typography>
 
                     <Link to='/'>
                         <Button>
                             <Typography variant="h6" className={classes.title}>
-                                Create Notes
+                                Create Todos
                             </Typography>
                         </Button>
                     </Link>
 
-                    <Link to='/archive'>
+                    <Link to='/view'>
                         <Button>
                             <Typography variant="h6" className={classes.title}>
-                                Completed notes
+                                View todos
                             </Typography>
                         </Button>
                     </Link>

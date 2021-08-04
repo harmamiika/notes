@@ -51,7 +51,7 @@ const AddNote = () => {
                 variant="outlined"
             />
             <Button type="submit" variant="contained"
-                color="primary" fullWidth>Add new note!     </Button>
+                color="primary" fullWidth>Add new Todo!</Button>
         </form>
     )
 }
