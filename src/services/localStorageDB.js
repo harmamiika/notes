@@ -12,10 +12,10 @@ const getNotes = () => {
 }
 
 
-const addNote = (inputContent, deadline) => {
+const addNote = (inputContent, category, deadline) => {
     console.log(inputContent, 'content')
 
-    const DBFormatNote = DBcreateNote(inputContent, deadline)
+    const DBFormatNote = DBcreateNote(inputContent, category, deadline)
 
     return DBFormatNote
 }
@@ -36,10 +36,11 @@ const DBdeleteNote = (id) => {
     window.localStorage.setItem('notes', JSON.stringify(newNotes))
 }
 
-const DBcreateNote = (inputContent, deadline) => {
+const DBcreateNote = (inputContent, category, deadline) => {
     const DBNote = {
         id: makeId(),
         content: inputContent,
+        category,
         createDate: new Date().toLocaleString('en-US'),
         completeDate: null,
         targetDate: deadline,

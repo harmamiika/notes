@@ -11,6 +11,7 @@ import { addNote } from '../actions/index'
 const AddNote = () => {
     const [input, setInput] = useState('')
     const [deadline, setDeadline] = useState('')
+    const [category, setCategory] = useState('')
     const dispatch = useDispatch()
 
     const onFormSubmit = (event) => {
@@ -20,7 +21,7 @@ const AddNote = () => {
 
         console.log(input, 'input')
 
-        dispatch(addNote(input))
+        dispatch(addNote(input, category, deadline))
         setInput('')
     }
 
@@ -43,6 +44,19 @@ const AddNote = () => {
                 rows={7}
                 variant="outlined"
                 autoFocus
+            />
+            <TextField
+                onKeyPress={(ev) => {
+                    if (ev.key === 'Enter') {
+                        onFormSubmit()
+                        ev.preventDefault()
+                    }
+                }}
+                onChange={(e) => setCategory(e.target.value)}
+                value={category}
+                fullWidth
+                label="Category (optional)"
+                variant="outlined"
             />
             <TextField
                 onChange={(e) => setDeadline(e.target.value)}
