@@ -11,6 +11,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { Button } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 
+import './Header.css'
+
 const useStyles = makeStyles((theme) => ({
     centeritems: {
         justifyContent: 'flex-center',
@@ -72,36 +74,45 @@ const Header = () => {
                     </Link>
                 </Toolbar>
             </AppBar>
+
             <AppBar position="static">
-                <Grid container spacing={3}>
-                    <Grid>
-                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                            <MenuIcon />
-                        </IconButton>
-                    </Grid>
+                <div className='header'>
+                    <div className='header-cell-buttons'>
 
-                    <Typography variant="h5" className={classes.title}>
-                        Notes App by Miika
-                    </Typography>
+                        <Link to='/'>
+                            <Button>
+                                <Typography variant="h6" className={classes.title}>
+                                    Create Todos
+                                </Typography>
+                            </Button>
+                        </Link>
 
-                    <Grid item cs={6} className={classes.centeritems}>
-                        <Button>
-                            <Typography variant="h6" className={classes.title}>
-                                Create Notes
-                            </Typography>
-                        </Button>
-                        <Button>
-                            <Typography variant="h6" className={classes.title}>
-                                Completed notes
-                            </Typography>
-                        </Button>
-                        <Button>
-                            <Typography variant="h6" className={classes.title}>
-                                Info
-                            </Typography>
-                        </Button>
-                    </Grid>
-                </Grid>
+                        <Link to='/categories'>
+                            <Button>
+                                <Typography variant="h6" className={classes.title}>
+                                    Categories
+                                </Typography>
+                            </Button>
+                        </Link>
+
+                        <Link to='/view'>
+                            <Button>
+                                <Typography variant="h6" className={classes.title}>
+                                    View todos
+                                </Typography>
+                            </Button>
+                        </Link>
+
+                        <Link to='/info'>
+                            <Button>
+                                <Typography variant="h6" className={classes.title}>
+                                    Info
+                                </Typography>
+                            </Button>
+                        </Link>
+
+                    </div>
+                </div>
             </AppBar>
         </div>
     )

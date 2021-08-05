@@ -9,8 +9,10 @@ import AddNote from './AddNote'
 import NoteList from './NoteList'
 import Info from './Info'
 import ViewNotes from './ViewNotes'
+import Categories from './Categories'
 
 import { getNotes } from '../actions'
+
 
 
 const App = () => {
@@ -29,6 +31,10 @@ const App = () => {
 
                     <Route path='/info'>
                         <Info />
+                    </Route>
+
+                    <Route path='/categories'>
+                        <Categories />
                     </Route>
 
                     <Route path='/view'>
