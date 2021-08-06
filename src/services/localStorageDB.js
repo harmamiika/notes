@@ -1,3 +1,5 @@
+// Notes
+
 const getNotes = () => {
     const jsonNotes = window.localStorage.getItem('notes')
     console.log(jsonNotes, 'jsonNtes')
@@ -40,7 +42,7 @@ const DBcreateNote = (inputContent, category, deadline) => {
     const DBNote = {
         id: makeId(),
         content: inputContent,
-        category,
+        category: category,
         createDate: new Date().toLocaleString('en-GB'),
         completeDate: null,
         deadline: formatDeadline(deadline),
@@ -66,6 +68,34 @@ const DBaddNote = (DBnote) => {
     return newArray
 }
 
+
+// Categories
+
+const DBgetCategories = () => {
+    const notes = getNotes()
+
+    const categoriesArray = notes.reduce((categoryArray, note) => {
+        if (categoryArray.includes(note.category)) {
+            return categoryArray
+        }
+        return categoryArray.concat(note.category)
+    })
+
+    console.log(categoriesArray, 'arraycategories')
+
+    return categoriesArray
+}
+
+
+
+
+
+
+
+
+
+// helper functions
+
 const makeId = () => {
     return Math.floor(Math.random() * 1000000)
 }
@@ -74,11 +104,7 @@ const formatDeadline = (deadline) => {
     if (!deadline) {
         return null
     }
-
-    console.log(deadline, 'dl')
-
     const splitted = deadline.split('-')
-    console.log(splitted, 'formatted dl')
 
     if (splitted[2].length === 2) {
         splitted[0] = '20' + splitted[2]
@@ -88,7 +114,6 @@ const formatDeadline = (deadline) => {
 
     const formattedDeadline = new Date(splitted[0], splitted[1], splitted[2]).toLocaleString('en-GB')
 
-    console.log(formattedDeadline, 'adsadasdda')
     return formattedDeadline
 }
 
@@ -96,5 +121,6 @@ export default {
     addNote,
     getNotes,
     DBdeleteNote,
-    DBcompleteNote
+    DBcompleteNote,
+    DBgetCategories
 }

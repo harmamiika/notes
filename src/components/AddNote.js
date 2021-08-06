@@ -64,7 +64,6 @@ const AddNote = () => {
                 id="date"
                 label="Deadline (optional)"
                 type="date"
-                defaultValue=""
                 InputLabelProps={{
                     shrink: true,
                 }}

@@ -39,3 +39,16 @@ export const completeNote = (id) => async dispatch => {
     })
 }
 
+export const getCategories = () => async dispatch => {
+
+    const categories = dbService.getCategories()
+
+    dispatch({
+        type: 'GET_CATEGORIES',
+        payload: categories
+    })
+}
+
+export const getCategory = () => async dispatch => {
+
+}
