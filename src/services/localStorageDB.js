@@ -43,7 +43,7 @@ const DBcreateNote = (inputContent, category, deadline) => {
         category,
         createDate: new Date().toLocaleString('en-US'),
         completeDate: null,
-        targetDate: deadline,
+        targetDate: formatDeadline(deadline),
         completed: false
     }
 
@@ -68,6 +68,26 @@ const DBaddNote = (DBnote) => {
 
 const makeId = () => {
     return Math.floor(Math.random() * 1000000)
+}
+
+const formatDeadline = (deadline) => {
+    if (!deadline) {
+        return null
+    }
+
+    console.log(deadline, 'dl')
+
+    const splitted = deadline.split('-')
+    console.log(splitted, 'formatted dl')
+
+    if (splitted[2].length === 2) {
+        splitted[0] = '20' + splitted[2]
+    }
+
+    const formattedDeadline = new Date(splitted[0], splitted[1], splitted[2]).toLocaleString('en-US')
+
+    console.log(formattedDeadline, 'adsadasdda')
+    return formattedDeadline
 }
 
 export default {

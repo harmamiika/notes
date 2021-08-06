@@ -20,6 +20,8 @@ const AddNote = () => {
         }
 
         console.log(input, 'input')
+        console.log(category, 'category')
+        console.log(deadline, 'deadline')
 
         dispatch(addNote(input, category, deadline))
         setInput('')
@@ -61,9 +63,13 @@ const AddNote = () => {
             <TextField
                 onChange={(e) => setDeadline(e.target.value)}
                 value={deadline}
-                fullWidth
-                label="xx.xx.xx formatted deadline (optional)"
-                variant="outlined"
+                id="date"
+                label="Deadline (optional)"
+                type="date"
+                defaultValue=""
+                InputLabelProps={{
+                    shrink: true,
+                }}
             />
             <Button type="submit" variant="contained"
                 color="primary" fullWidth>Add new Todo!</Button>
