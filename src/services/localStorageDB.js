@@ -41,9 +41,9 @@ const DBcreateNote = (inputContent, category, deadline) => {
         id: makeId(),
         content: inputContent,
         category,
-        createDate: new Date().toLocaleString('en-US'),
+        createDate: new Date().toLocaleString('en-GB'),
         completeDate: null,
-        targetDate: formatDeadline(deadline),
+        deadline: formatDeadline(deadline),
         completed: false
     }
 
@@ -82,9 +82,11 @@ const formatDeadline = (deadline) => {
 
     if (splitted[2].length === 2) {
         splitted[0] = '20' + splitted[2]
+    } else if (splitted[2].length === 3 || splitted[2].length === 1) {
+        return null
     }
 
-    const formattedDeadline = new Date(splitted[0], splitted[1], splitted[2]).toLocaleString('en-US')
+    const formattedDeadline = new Date(splitted[0], splitted[1], splitted[2]).toLocaleString('en-GB')
 
     console.log(formattedDeadline, 'adsadasdda')
     return formattedDeadline

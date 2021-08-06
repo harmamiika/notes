@@ -14,6 +14,13 @@ const AddNote = () => {
     const [category, setCategory] = useState('')
     const dispatch = useDispatch()
 
+    const sendOnEnterPress = (ev) => {
+        if (ev.key === 'Enter') {
+            onFormSubmit()
+            ev.preventDefault()
+        }
+    }
+
     const onFormSubmit = (event) => {
         if (event) {
             event.preventDefault()
@@ -31,12 +38,7 @@ const AddNote = () => {
         <form onSubmit={onFormSubmit}>
             <h1>Create todo</h1>
             <TextField
-                onKeyPress={(ev) => {
-                    if (ev.key === 'Enter') {
-                        onFormSubmit()
-                        ev.preventDefault()
-                    }
-                }}
+                onKeyPress={sendOnEnterPress}
                 onChange={(e) => setInput(e.target.value)}
                 value={input}
                 fullWidth
@@ -48,12 +50,7 @@ const AddNote = () => {
                 autoFocus
             />
             <TextField
-                onKeyPress={(ev) => {
-                    if (ev.key === 'Enter') {
-                        onFormSubmit()
-                        ev.preventDefault()
-                    }
-                }}
+                onKeyPress={sendOnEnterPress}
                 onChange={(e) => setCategory(e.target.value)}
                 value={category}
                 fullWidth
@@ -61,6 +58,7 @@ const AddNote = () => {
                 variant="outlined"
             />
             <TextField
+                onKeyPress={sendOnEnterPress}
                 onChange={(e) => setDeadline(e.target.value)}
                 value={deadline}
                 id="date"
