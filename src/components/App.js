@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
 
 import Container from '@material-ui/core/Container'
@@ -17,6 +17,7 @@ import { getNotes } from '../actions'
 
 const App = () => {
     const dispatch = useDispatch()
+    const notes = useSelector(state => state.notes)
 
     useEffect(() => {
         dispatch(getNotes())
@@ -39,12 +40,12 @@ const App = () => {
 
                     <Route path='/view'>
                         <ViewNotes />
-                        <NoteList completed={true} />
+                        <NoteList notes={notes} completed={true} />
                     </Route>
 
                     <Route path='/'>
                         <AddNote />
-                        <NoteList completed={false} />
+                        <NoteList notes={notes} completed={false} />
                     </Route>
 
                 </Switch>
