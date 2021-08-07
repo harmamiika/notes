@@ -3,8 +3,11 @@ import { useSelector } from 'react-redux'
 
 import Chip from '@material-ui/core/Chip';
 
+import NoteList from './NoteList';
+
 const Categories = () => {
     const [viewCategory, setViewCategory] = useState(null)
+    const [filteredNotes, setFilteredNotes] = useState(null)
 
     const notes = useSelector(state => state.notes)
 
@@ -15,10 +18,12 @@ const Categories = () => {
         return categoryArray.concat(note.category)
     }, [])
 
+    const filterNotes = (viewCategory) => {
+        return notes.filter(note => note.category === viewCategory)
+    }
+
 
     console.log(notes, 'notes')
-
-
     console.log(categories, 'categories1231323')
 
     const renderCategories = () => {
@@ -38,13 +43,13 @@ const Categories = () => {
         })
     }
 
-
     return (
         <div>
             <h1>Categories</h1>
             {renderCategories()}
             {viewCategory ? <h2>{viewCategory}</h2> : null}
 
+            <NoteList notes={notes.filter(note => note.category === viewCategory)} completed={false} />
 
         </div>
     )
