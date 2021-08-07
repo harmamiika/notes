@@ -22,10 +22,18 @@ const Categories = () => {
     const categories = getCategories()
     console.log(categories, 'categories1231323')
 
+    const renderCategories = () => {
+        return categories.map(category => {
+            return (
+                <div>{category}</div>
+            )
+        })
+    }
+
     return (
         <div>
             <h1>Categories</h1>
-
+            {renderCategories()}
         </div>
     )
 }
