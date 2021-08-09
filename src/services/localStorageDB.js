@@ -122,5 +122,6 @@ export default {
     getNotes,
     DBdeleteNote,
     DBcompleteNote,
-    DBgetCategories
+    DBgetCategories,
+    makeId
 }

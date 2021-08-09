@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import Chip from '@material-ui/core/Chip';
 
 import NoteList from './NoteList';
+import localStorageDB from '../services/localStorageDB';
 
 const Categories = () => {
     const [viewCategory, setViewCategory] = useState(null)
@@ -28,8 +29,14 @@ const Categories = () => {
 
     const renderCategories = () => {
         return categories.map(category => {
-            if (category === undefined || null) {
-                return null
+            if (category === undefined || null || '') {
+                return <Chip
+                    key={localStorageDB.makeId()}
+                    label='no category'
+                    clickable
+                    color="primary"
+                    onClick={() => setViewCategory(category)}
+                />
             }
             return (
                 <Chip
@@ -47,7 +54,7 @@ const Categories = () => {
         <div>
             <h1>Categories</h1>
             {renderCategories()}
-            {viewCategory ? <h2>{viewCategory}</h2> : null}
+            {viewCategory ? <h2>{viewCategory}</h2> : <h2>No category</h2>}
 
             <NoteList notes={notes.filter(note => note.category === viewCategory)} completed={false} />
 
