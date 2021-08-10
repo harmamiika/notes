@@ -15,7 +15,7 @@ import { addNote } from '../actions/index'
 const AddNote = () => {
     const [input, setInput] = useState('')
     const [deadline, setDeadline] = useState('')
-    const [category, setCategory] = useState('todo');
+    const [category, setCategory] = useState('todos');
     const dispatch = useDispatch()
 
     const sendOnEnterPress = (ev) => {
@@ -44,7 +44,7 @@ const AddNote = () => {
 
     return (
         <form onSubmit={onFormSubmit}>
-            <h1>Create todo</h1>
+            <h1>Create note</h1>
             <TextField
                 onKeyPress={sendOnEnterPress}
                 onChange={(e) => setInput(e.target.value)}
@@ -57,6 +57,17 @@ const AddNote = () => {
                 variant="outlined"
                 autoFocus
             />
+            <FormControl component="fieldset">
+                <FormLabel component="legend">Select category</FormLabel>
+                <RadioGroup aria-label="gender" name="gender1" value={category} onChange={handleChange}>
+                    <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+                    <FormControlLabel value="books" control={<Radio />} label="Books" />
+                    <FormControlLabel value="movies" control={<Radio />} label="Movies" />
+                    <FormControlLabel value="shows" control={<Radio />} label="Shows" />
+                    <FormControlLabel value="events" control={<Radio />} label="Events" />
+                    <FormControlLabel value="goals" control={<Radio />} label="Goals" />
+                </RadioGroup>
+            </FormControl>
             <TextField
                 onKeyPress={sendOnEnterPress}
                 onChange={(e) => setDeadline(e.target.value)}
@@ -68,16 +79,6 @@ const AddNote = () => {
                     shrink: true,
                 }}
             />
-            <FormControl component="fieldset">
-                <FormLabel component="legend">Select category</FormLabel>
-                <RadioGroup aria-label="gender" name="gender1" value={category} onChange={handleChange}>
-                    <FormControlLabel value="todo" control={<Radio />} label="todo" />
-                    <FormControlLabel value="book" control={<Radio />} label="book" />
-                    <FormControlLabel value="movie" control={<Radio />} label="movie" />
-                    <FormControlLabel value="series" control={<Radio />} label="series" />
-                </RadioGroup>
-            </FormControl>
-
             <Button type="submit" variant="contained"
                 color="primary" fullWidth>Add new Todo!</Button>
         </form>
