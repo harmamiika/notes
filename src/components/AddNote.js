@@ -15,7 +15,7 @@ import { addNote } from '../actions/index'
 const AddNote = () => {
     const [input, setInput] = useState('')
     const [deadline, setDeadline] = useState('')
-    const [category, setCategory] = useState('todos');
+    const [category, setCategory] = useState('Todos');
     const dispatch = useDispatch()
 
     const sendOnEnterPress = (ev) => {
@@ -60,12 +60,12 @@ const AddNote = () => {
             <FormControl component="fieldset">
                 <FormLabel component="legend">Select category</FormLabel>
                 <RadioGroup aria-label="gender" name="gender1" value={category} onChange={handleChange}>
-                    <FormControlLabel value="todos" control={<Radio />} label="Todos" />
-                    <FormControlLabel value="books" control={<Radio />} label="Books" />
-                    <FormControlLabel value="movies" control={<Radio />} label="Movies" />
-                    <FormControlLabel value="shows" control={<Radio />} label="Shows" />
-                    <FormControlLabel value="events" control={<Radio />} label="Events" />
-                    <FormControlLabel value="goals" control={<Radio />} label="Goals" />
+                    <FormControlLabel value="Todos" control={<Radio />} label="Todos" />
+                    <FormControlLabel value="Books" control={<Radio />} label="Books" />
+                    <FormControlLabel value="Movies" control={<Radio />} label="Movies" />
+                    <FormControlLabel value="Shows" control={<Radio />} label="Shows" />
+                    <FormControlLabel value="Events" control={<Radio />} label="Events" />
+                    <FormControlLabel value="Goals" control={<Radio />} label="Goals" />
                 </RadioGroup>
             </FormControl>
             <TextField
@@ -84,5 +84,10 @@ const AddNote = () => {
         </form>
     )
 }
+
+
+// deadline textfieldin default value datesta
+
+// movies list riviin css muotoilulla tai docs
 
 export default AddNote
