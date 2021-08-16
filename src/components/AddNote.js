@@ -9,6 +9,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import Typography from '@material-ui/core/Typography';
 
 import './AddNote.css'
 import { addNote } from '../actions/index'
@@ -45,7 +46,9 @@ const AddNote = () => {
 
     return (
         <form onSubmit={onFormSubmit}>
-            <h1>Create note</h1>
+            <Typography className='form-header' variant='h2'>
+                Create Note
+            </Typography>
             <TextField
                 onKeyPress={sendOnEnterPress}
                 onChange={(e) => setInput(e.target.value)}
