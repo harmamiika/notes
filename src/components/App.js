@@ -45,7 +45,7 @@ const App = () => {
 
                     <Route path='/'>
                         <AddNote />
-                        <NoteList notes={notes} completed={false} />
+                        <Categories />
                     </Route>
 
                 </Switch>
@@ -53,6 +53,8 @@ const App = () => {
         </div>
     )
 }
+
+//                         <NoteList notes={notes} completed={false} />
 
 // all notes
 // next notes

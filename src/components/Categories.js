@@ -38,7 +38,7 @@ const Categories = () => {
 
     return (
         <div>
-            <h1>Categories</h1>
+            <h1>Notes by category</h1>
             {renderCategories()}
             {viewCategory ? <h2>{viewCategory}</h2> : <h2>No category</h2>}
 
