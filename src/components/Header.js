@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -11,111 +11,74 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { Button } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 
-import './Header.css'
+import './Header.css';
 
 const useStyles = makeStyles((theme) => ({
-    centeritems: {
-        justifyContent: 'flex-center',
-        alignItems: "center"
-    },
-    root: {
-        flexGrow: 1,
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
-    title: {
-        flexGrow: 1,
-        color: 'white'
-    },
-    centeredButtons: {
-        justifyContent: 'flex-center'
-    }
+  centeritems: {
+    justifyContent: 'flex-center',
+    alignItems: 'center',
+  },
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+    color: 'white',
+  },
+  centeredButtons: {
+    justifyContent: 'flex-center',
+  },
 }));
 
-
 const Header = () => {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    return (
-        <div>
-            <AppBar position="static">
-                <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon />
-                    </IconButton>
+  return (
+    <div>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h5" className={classes.title}>
+            LocalStorageNotes by Miika
+          </Typography>
 
-                    <Typography variant="h5" className={classes.title}>
-                        Todo App by Miika
-                    </Typography>
+          <Link to="/">
+            <Button>
+              <Typography variant="h6" className={classes.title}>
+                Create Notes
+              </Typography>
+            </Button>
+          </Link>
 
-                    <Link to='/'>
-                        <Button>
-                            <Typography variant="h6" className={classes.title}>
-                                Create Todos
-                            </Typography>
-                        </Button>
-                    </Link>
+          <Link to="/categories">
+            <Button>
+              <Typography variant="h6" className={classes.title}>
+                Categories
+              </Typography>
+            </Button>
+          </Link>
 
-                    <Link to='/view'>
-                        <Button>
-                            <Typography variant="h6" className={classes.title}>
-                                View todos
-                            </Typography>
-                        </Button>
-                    </Link>
+          <Link to="/view">
+            <Button>
+              <Typography variant="h6" className={classes.title}>
+                Note Archive
+              </Typography>
+            </Button>
+          </Link>
 
-                    <Link to='/info'>
-                        <Button>
-                            <Typography variant="h6" className={classes.title}>
-                                Info
-                            </Typography>
-                        </Button>
-                    </Link>
-                </Toolbar>
-            </AppBar>
+          <Link to="/info">
+            <Button>
+              <Typography variant="h6" className={classes.title}>
+                Info
+              </Typography>
+            </Button>
+          </Link>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
+};
 
-            <AppBar position="static">
-                <div className='header'>
-                    <div className='header-cell-buttons'>
-
-                        <Link to='/'>
-                            <Button>
-                                <Typography variant="h6" className={classes.title}>
-                                    Create Todos
-                                </Typography>
-                            </Button>
-                        </Link>
-
-                        <Link to='/categories'>
-                            <Button>
-                                <Typography variant="h6" className={classes.title}>
-                                    Categories
-                                </Typography>
-                            </Button>
-                        </Link>
-
-                        <Link to='/view'>
-                            <Button>
-                                <Typography variant="h6" className={classes.title}>
-                                    View todos
-                                </Typography>
-                            </Button>
-                        </Link>
-
-                        <Link to='/info'>
-                            <Button>
-                                <Typography variant="h6" className={classes.title}>
-                                    Info
-                                </Typography>
-                            </Button>
-                        </Link>
-
-                    </div>
-                </div>
-            </AppBar>
-        </div>
-    )
-}
-
-export default Header
+export default Header;
