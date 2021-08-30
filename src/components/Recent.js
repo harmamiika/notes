@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import { Typography } from '@material-ui/core';
+
 import NoteList from './NoteList';
 
 const Recent = () => {
@@ -31,7 +33,9 @@ const Recent = () => {
 
   return (
     <div>
-      <h2>Recently added todos</h2>
+      <Typography variant="h3" component="h3">
+        Recent todos
+      </Typography>
       <NoteList notes={recentTodos} completed={false} />
     </div>
   );
