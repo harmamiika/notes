@@ -44,10 +44,14 @@ const Note = ({ note, showButtons = true }) => {
         />
         {showButtons && (
           <>
-            <Button color="primary" onClick={onDoneClick}>
+            <Button color="primary" onClick={onDoneClick} title="Complete note">
               <DoneIcon className={classes.doneIcon} />
             </Button>
-            <Button color="secondary" onClick={onDeleteClick}>
+            <Button
+              color="secondary"
+              onClick={onDeleteClick}
+              title="Discard note"
+            >
               <ClearIcon />
             </Button>
           </>
