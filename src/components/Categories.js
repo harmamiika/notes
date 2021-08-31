@@ -77,13 +77,3 @@ export default Categories;
 // otsikko
 // kategory list
 // filtered list
-
-{
-  /* <Chip
-key={category}
-label={category}
-clickable
-color="primary"
-onClick={() => setViewCategory(category)}
-/> */
-}

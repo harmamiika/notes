@@ -133,7 +133,7 @@ export const makeUsDate = (date) => {
   return new Date(USDate);
 };
 
-export default {
+const functions = {
   addNote,
   getNotes,
   DBdeleteNote,
@@ -141,3 +141,5 @@ export default {
   DBgetCategories,
   makeId,
 };
+
+export default functions;
