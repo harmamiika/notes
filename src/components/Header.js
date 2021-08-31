@@ -44,7 +44,7 @@ const Header = () => {
             LocalStorageNotes by Miika
           </Typography>
 
-          <Link to="/">
+          <Link to="/" className="link">
             <Button>
               <Typography variant="h6" className={classes.title}>
                 Create Notes
@@ -52,7 +52,7 @@ const Header = () => {
             </Button>
           </Link>
 
-          <Link to="/categories">
+          <Link to="/categories" className="link">
             <Button>
               <Typography variant="h6" className={classes.title}>
                 Categories
@@ -60,7 +60,7 @@ const Header = () => {
             </Button>
           </Link>
 
-          <Link to="/archive">
+          <Link to="/archive" className="link">
             <Button>
               <Typography variant="h6" className={classes.title}>
                 Note Archive
@@ -68,7 +68,7 @@ const Header = () => {
             </Button>
           </Link>
 
-          <Link to="/info">
+          <Link to="/info" className="link">
             <Button>
               <Typography variant="h6" className={classes.title}>
                 Info
