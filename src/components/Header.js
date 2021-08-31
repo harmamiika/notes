@@ -38,7 +38,7 @@ const Header = () => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h5" className={classes.title}>
-            LocalStorageNotes by Miika
+            LocalNotes by Miika
           </Typography>
 
           <Link to="/" className="link">

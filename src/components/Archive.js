@@ -22,7 +22,7 @@ const Archive = () => {
   return (
     <div>
       <Helmet>
-        <title>Archive | LocalStorageNotes</title>
+        <title>Archive | LocalNotes</title>
       </Helmet>
       <Typography variant="h2" component="h1">
         Note Archive - completed notes

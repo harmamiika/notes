@@ -45,7 +45,7 @@ const Categories = () => {
   return (
     <div>
       <Helmet>
-        <title>Categories | LocalStorageNotes</title>
+        <title>Categories | LocalNotes</title>
       </Helmet>
 
       <Typography variant="h2" component="h1">

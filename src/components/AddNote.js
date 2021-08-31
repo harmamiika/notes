@@ -48,7 +48,7 @@ const AddNote = () => {
   return (
     <>
       <Helmet>
-        <title>Add note | LocalStorageNotes</title>
+        <title>Add note | LocalNotes</title>
       </Helmet>
       <form onSubmit={onFormSubmit}>
         <Typography className="form-header" variant="h2">

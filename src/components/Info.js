@@ -9,10 +9,10 @@ const Info = () => {
   return (
     <div>
       <Helmet>
-        <title>Info | LocalStorageNotes</title>
+        <title>Info | LocalNotes</title>
       </Helmet>
       <Typography variant="h2" component="h1">
-        LocalStorageTodos by Miika
+        LocalNotes by Miika
       </Typography>
       <Typography variant="p" component="p">
         Todo app with smooth user experience
