@@ -60,7 +60,7 @@ const Header = () => {
             </Button>
           </Link>
 
-          <Link to="/view">
+          <Link to="/archive">
             <Button>
               <Typography variant="h6" className={classes.title}>
                 Note Archive

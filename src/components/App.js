@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 
 import Container from '@material-ui/core/Container';
 
 import Header from './Header';
 import AddNote from './AddNote';
-import NoteList from './NoteList';
 import Info from './Info';
-import ViewNotes from './ViewNotes';
+import Archive from './Archive';
 import Categories from './Categories';
 
 import { getNotes } from '../actions';
@@ -16,7 +15,6 @@ import Recent from './Recent';
 
 const App = () => {
   const dispatch = useDispatch();
-  const notes = useSelector((state) => state.notes);
 
   useEffect(() => {
     dispatch(getNotes());
@@ -36,9 +34,8 @@ const App = () => {
             <Categories />
           </Route>
 
-          <Route path="/view">
-            <ViewNotes />
-            <NoteList notes={notes} completed={true} showButtons={false} />
+          <Route path="/archive">
+            <Archive />
           </Route>
 
           <Route path="/">

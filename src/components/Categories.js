@@ -20,7 +20,7 @@ const Categories = () => {
       }
       return categoryArray.concat(note.category);
     },
-    ['Todos', 'Books', 'Movies', 'Shows', 'Misc', 'Goals']
+    ['Todos', 'Books', 'Movies', 'Shows', 'Goals', 'Misc']
   );
 
   console.log(notes, 'notes');
