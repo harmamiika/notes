@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import Chip from '@material-ui/core/Chip';
-
 import NoteList from './NoteList';
+import { Button, ButtonGroup, Typography } from '@material-ui/core';
+
+import './Categories.css';
 
 const Categories = () => {
   const [viewCategory, setViewCategory] = useState('Todos');
@@ -19,7 +20,7 @@ const Categories = () => {
       }
       return categoryArray.concat(note.category);
     },
-    ['Todos', 'Books', 'Movies', 'Shows', 'Events', 'Goals']
+    ['Todos', 'Books', 'Movies', 'Shows', 'Misc', 'Goals']
   );
 
   console.log(notes, 'notes');
@@ -28,22 +29,35 @@ const Categories = () => {
   const renderCategories = () => {
     return categories.map((category) => {
       return (
-        <Chip
-          key={category}
-          label={category}
-          clickable
+        <Button
           color="primary"
+          size="large"
+          key={category}
           onClick={() => setViewCategory(category)}
-        />
+        >
+          {category}
+        </Button>
       );
     });
   };
 
   return (
     <div>
-      <h1>Notes by category</h1>
-      {renderCategories()}
-      {viewCategory ? <h2>{viewCategory}</h2> : <h2>No category</h2>}
+      <Typography variant="h2" component="h1">
+        Notes by category
+      </Typography>
+
+      <ButtonGroup className="category-buttons">
+        {renderCategories()}
+      </ButtonGroup>
+
+      {viewCategory ? (
+        <Typography variant="h3" component="h3">
+          {viewCategory}
+        </Typography>
+      ) : (
+        <h2>No category</h2>
+      )}
 
       <NoteList
         notes={notes.filter((note) => note.category === viewCategory)}
@@ -58,3 +72,13 @@ export default Categories;
 // otsikko
 // kategory list
 // filtered list
+
+{
+  /* <Chip
+key={category}
+label={category}
+clickable
+color="primary"
+onClick={() => setViewCategory(category)}
+/> */
+}
