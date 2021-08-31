@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -45,82 +46,87 @@ const AddNote = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <Typography className="form-header" variant="h2">
-        Create Note
-      </Typography>
-      <TextField
-        onKeyPress={sendOnEnterPress}
-        onChange={(e) => setInput(e.target.value)}
-        value={input}
-        fullWidth
-        id="outlined-multiline-static"
-        label="Add note"
-        multiline
-        rows={7}
-        variant="outlined"
-        autoFocus
-      />
-      <div className="form-row">
-        <FormControl component="fieldset">
-          <FormLabel component="legend">Select category</FormLabel>
-          <RadioGroup
-            aria-label="gender"
-            name="gender1"
-            value={category}
-            onChange={handleChange}
-          >
-            <div>
-              <FormControlLabel
-                value="Todos"
-                control={<Radio />}
-                label="Todos"
-              />
-              <FormControlLabel
-                value="Books"
-                control={<Radio />}
-                label="Books"
-              />
-              <FormControlLabel
-                value="Movies"
-                control={<Radio />}
-                label="Movies"
-              />
-              <FormControlLabel
-                value="Shows"
-                control={<Radio />}
-                label="Shows"
-              />
-              <FormControlLabel
-                value="Events"
-                control={<Radio />}
-                label="Events"
-              />
-              <FormControlLabel
-                value="Goals"
-                control={<Radio />}
-                label="Goals"
-              />
-            </div>
-          </RadioGroup>
-        </FormControl>
+    <>
+      <Helmet>
+        <title>Add note | LocalStorageNotes</title>
+      </Helmet>
+      <form onSubmit={onFormSubmit}>
+        <Typography className="form-header" variant="h2">
+          Create Note
+        </Typography>
         <TextField
-          className="deadline-field"
           onKeyPress={sendOnEnterPress}
-          onChange={(e) => setDeadline(e.target.value)}
-          value={deadline}
-          id="date"
-          label="Deadline (optional)"
-          type="date"
-          InputLabelProps={{
-            shrink: true,
-          }}
+          onChange={(e) => setInput(e.target.value)}
+          value={input}
+          fullWidth
+          id="outlined-multiline-static"
+          label="Add note"
+          multiline
+          rows={7}
+          variant="outlined"
+          autoFocus
         />
-      </div>
-      <Button type="submit" variant="contained" color="primary" fullWidth>
-        Add new Todo!
-      </Button>
-    </form>
+        <div className="form-row">
+          <FormControl component="fieldset">
+            <FormLabel component="legend">Select category</FormLabel>
+            <RadioGroup
+              aria-label="gender"
+              name="gender1"
+              value={category}
+              onChange={handleChange}
+            >
+              <div>
+                <FormControlLabel
+                  value="Todos"
+                  control={<Radio />}
+                  label="Todos"
+                />
+                <FormControlLabel
+                  value="Books"
+                  control={<Radio />}
+                  label="Books"
+                />
+                <FormControlLabel
+                  value="Movies"
+                  control={<Radio />}
+                  label="Movies"
+                />
+                <FormControlLabel
+                  value="Shows"
+                  control={<Radio />}
+                  label="Shows"
+                />
+                <FormControlLabel
+                  value="Events"
+                  control={<Radio />}
+                  label="Events"
+                />
+                <FormControlLabel
+                  value="Goals"
+                  control={<Radio />}
+                  label="Goals"
+                />
+              </div>
+            </RadioGroup>
+          </FormControl>
+          <TextField
+            className="deadline-field"
+            onKeyPress={sendOnEnterPress}
+            onChange={(e) => setDeadline(e.target.value)}
+            value={deadline}
+            id="date"
+            label="Deadline (optional)"
+            type="date"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+        </div>
+        <Button type="submit" variant="contained" color="primary" fullWidth>
+          Add new Todo!
+        </Button>
+      </form>
+    </>
   );
 };
 

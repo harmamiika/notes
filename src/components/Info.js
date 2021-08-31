@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import './Info.css';
 
@@ -7,6 +8,9 @@ import { Typography } from '@material-ui/core';
 const Info = () => {
   return (
     <div>
+      <Helmet>
+        <title>Info | LocalStorageNotes</title>
+      </Helmet>
       <Typography variant="h2" component="h1">
         LocalStorageTodos by Miika
       </Typography>

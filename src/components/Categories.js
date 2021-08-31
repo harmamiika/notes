@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 import NoteList from './NoteList';
 import { Button, ButtonGroup, Typography } from '@material-ui/core';
@@ -43,6 +44,10 @@ const Categories = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Categories | LocalStorageNotes</title>
+      </Helmet>
+
       <Typography variant="h2" component="h1">
         Notes by category
       </Typography>
