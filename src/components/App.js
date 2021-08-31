@@ -38,7 +38,7 @@ const App = () => {
 
           <Route path="/view">
             <ViewNotes />
-            <NoteList notes={notes} completed={true} />
+            <NoteList notes={notes} completed={true} showButtons={false} />
           </Route>
 
           <Route path="/">
