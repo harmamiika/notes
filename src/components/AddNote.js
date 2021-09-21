@@ -44,6 +44,11 @@ const AddNote = () => {
     setInput('');
   };
 
+  const makeSingular = (word) => {
+    const wordLength = word.length;
+    return word.slice(0, word.length - 1);
+  };
+
   return (
     <>
       <Helmet>
@@ -122,7 +127,7 @@ const AddNote = () => {
           />
         </div>
         <Button type="submit" variant="contained" color="primary" fullWidth>
-          Add new Todo!
+          {`Add new ${makeSingular(category)}!`}
         </Button>
       </form>
     </>

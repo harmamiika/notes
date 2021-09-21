@@ -31,7 +31,7 @@ const Recent = () => {
   return (
     <div>
       <Typography className="headline" variant="h3" component="h3">
-        Recent {category && category}
+        {category && `Recent ${category}`}
       </Typography>
       {category && <NoteList notes={notesByCategory} completed={false} />}
     </div>
