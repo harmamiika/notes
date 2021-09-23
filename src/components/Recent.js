@@ -25,7 +25,7 @@ const Recent = () => {
       : null;
 
   const notesByCategory = notes.filter(
-    (note) => note.category === notes[0].category
+    (note) => note.category === recentNotes[recentNotes.length - 1].category
   );
 
   return (
