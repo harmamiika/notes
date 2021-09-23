@@ -45,7 +45,6 @@ const AddNote = () => {
   };
 
   const makeSingular = (word) => {
-    const wordLength = word.length;
     return word.slice(0, word.length - 1);
   };
 
