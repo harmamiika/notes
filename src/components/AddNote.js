@@ -115,7 +115,10 @@ const AddNote = () => {
           <TextField
             className="deadline-field"
             onKeyPress={sendOnEnterPress}
-            onChange={(e) => setDeadline(e.target.value)}
+            onChange={(e) => {
+              console.log(e.target.value, 'e');
+              setDeadline(e.target.value);
+            }}
             value={deadline}
             id="date"
             label="Deadline (optional)"

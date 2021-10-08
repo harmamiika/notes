@@ -104,16 +104,18 @@ const formatDeadline = (deadline) => {
   }
   const splitted = deadline.split('-');
 
-  if (splitted[2].length === 2) {
-    splitted[0] = '20' + splitted[2];
-  } else if (splitted[2].length === 3 || splitted[2].length === 1) {
+  if (splitted[0].length === 2) {
+    splitted[0] = '20' + splitted[0];
+  } else if (
+    splitted[0].length === 3 ||
+    splitted[0].length === 1 ||
+    splitted[0].length === 0
+  ) {
     return null;
   }
 
   const formattedDeadline = new Date(
-    splitted[0],
-    splitted[1],
-    splitted[2]
+    `${splitted[1]}/${splitted[2]}/${splitted[0]}`
   ).toLocaleString('en-GB');
 
   return formattedDeadline;

@@ -33,7 +33,7 @@ const Note = ({ note, showButtons = true }) => {
         <ListItemText
           primary={note.content}
           secondary={
-            note.deadline ? `Deadline: ${note.deadline.slice(0, 9)}` : ''
+            note.deadline ? `Deadline: ${note.deadline.slice(0, 10)}` : ''
           }
         />
         <ListItemText
