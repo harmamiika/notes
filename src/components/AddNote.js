@@ -109,6 +109,21 @@ const AddNote = () => {
                   control={<Radio />}
                   label="Goals"
                 />
+                <FormControlLabel
+                  value="Projects"
+                  control={<Radio />}
+                  label="Projects"
+                />
+                <FormControlLabel
+                  value="Shopping list"
+                  control={<Radio />}
+                  label="Shopping list"
+                />
+                <FormControlLabel
+                  value="Reminders"
+                  control={<Radio />}
+                  label="Reminders"
+                />
               </div>
             </RadioGroup>
           </FormControl>

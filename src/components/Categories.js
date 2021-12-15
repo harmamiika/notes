@@ -30,6 +30,7 @@ const Categories = () => {
       'Goals',
       'Projects',
       'Shopping list',
+      'Reminders',
     ]
   );
 
