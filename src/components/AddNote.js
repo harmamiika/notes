@@ -120,9 +120,9 @@ const AddNote = () => {
                   label="Reminders"
                 />
                 <FormControlLabel
-                  value="Shopping list"
+                  value="Shopping"
                   control={<Radio />}
-                  label="Shopping list"
+                  label="Shopping"
                 />
               </div>
             </RadioGroup>
